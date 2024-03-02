@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReTro Forum</title>
+    <title>MiXel Forum</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <!-- DaisyUI and Tailwind -->
@@ -19,25 +19,155 @@
                 clifford: '#da373d',
                'color-gray60': '#12132D99',
                'color-gray80' : '#12132DCC',
+               'color-rgb' : 'rgba(121, 125, 252, 100%)',
             }
             }
         }
         }
     </script>
 </head>
-<body>
- <header>
+<body class="font-mulish">
+ <header class="container mx-auto">
+<!-- Navbar -->
+<nav>
+    <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            </div>
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-lg gap-4">
+                <li><a title="Home" class="bg-gray-200 rounded-full p-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                  </svg>
+                  </a></li>
+                <li><a title="Edit" class="bg-gray-200 rounded-full p-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+                  </svg>
+                  </a></li>
+                <li><a title="Add" class="bg-gray-200 rounded-full p-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+                  </svg>
+                  </a></li>
+                <li><a title="Flagged" class="bg-gray-200 rounded-full p-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5" />
+                  </svg>
+                  </a></li>
+            </ul>
+          </div>
+            <a class="btn btn-ghost px-0 text-color-black font-extrabold text-2xl lg:text-4xl gap-0">MiXel</a>
+        </div>
+        <div class="navbar-end hidden lg:flex">
+          <ul class="menu menu-horizontal px-1 text-lg gap-4">
+            <li><a title="Home" class="bg-gray-200 rounded-full p-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+              </svg>
+            </a>
+              </li>
+            <li><a title="Edit" class="bg-gray-200 rounded-full p-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+              </svg>
+              </a></li>
+            <li><a title="Add" class="bg-gray-200 rounded-full p-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+              </svg>
+              </a></li>
+            <li><a title="Flagged" class="bg-gray-200 rounded-full p-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5" />
+              </svg>
+              </a></li>
+          </ul>
+        </div>
+        <div class="ml-2">
+            <a class="btn bg-[#797DFC] text-white rounded-2xl lg:rounded-3xl text-lg px-2 lg:text-xl font-bold lg:px-6">Sign In</a>
+        </div>
+      </div>
+</nav>
 
+<!-- Banner -->
+<div class="hero min-h-screen rounded-2xl bg-[#12132D] min-w-min" style="background-image: url(images/banner.png);">
+    <div class="hero-overlay bg-opacity-10 rounded-2xl min-w-min"></div>
+    <div class="hero-content">
+      <div class="flex flex-col lg:flex-row lg:justify-between lg:gap-20 gap-8">
+        <div class="max-w-md">
+            <h1 class="mb-2 lg:mb-10 text-white text-4xl font-bold lg:text-6xl text-center lg:text-start">Welcome to the <br> <span  class="text-color-rgb text-start">MixEL</span> Forum</h1>
+            <p class="mb-5 text-white font-medium text-start">Share your top opinion and snag a chance to win an exclusive forum coffee mug!</p>
+            <label class="input input-bordered flex items-center gap-2 rounded-3xl">
+                <input type="text" class="grow" placeholder="Search here anything" />
+                <button class="btn btn-sm bg-[#797DFC] rounded-3xl text-white">Search</button>
+              </label>
+          </div>
+            <div class="card w-80 h-44 bg-base-100 shadow-xl">
+                <div class="card-body">
+                 <div class="flex justify-between ">
+                    <div class="text-start">
+                      <h3>Registered users</h3>
+                      <h3>Forum</h3>
+                      <h3>Topics</h3>
+                      <h3>Replies</h3>
+                      </div>
+                      <div>
+                        <h3>01</h3>
+                        <h3>05</h3>
+                        <h3>01</h3>
+                        <h3>01</h3>
+                      </div>
+                 </div>
+                  </div>
+                </div>
+      </div>
+    </div>
+    </div>
+  </div>
  </header>
+ <main class="container mx-auto mt-28 font-mulish">
+    <!-- Let's Discuss Section -->
+<section>
+    <h1 class="text-black text-4xl font-bold text-center">Let's Discuss</h1>
+    <p class="text-color-gray60 text-xl font-medium text-center mt-2">Join the conversation in our forum section for diverse discussions. Share insights, connect with the community, and stay informed on a variety of topics. Your gateway to engaging conversations awaits!</p>
+</section>
 
- <main>
+<!-- Join Forum banner -->
+<section>
+<div class="bg-[#12132D] rounded-2xl flex flex-col-reverse lg:flex-row justify-between p-5 items-center mt-10">
+    <div class="text-center lg:text-start text-white lg:pl-10">
+        <h1 class="text-4xl font-bold">Join Our Forum</h1>
+        <p class="mt-2">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app.</p>
+        <button type="button" class="bg-[#797DFC] rounded-3xl p-2 w-40 mt-2">Register Now</button>
+        </div>
+<div>
+    <img src="images/joinforum.png" alt="">
+</div>
+</div>
+</section>
 
+<!-- Latest Posts Section -->
+<section class="mt-24">
+    <h1 class="text-black text-4xl font-bold text-center">Latest Posts</h1>
+    <p class="text-color-gray60 text-xl font-medium text-center mt-2">Stay updated with our newest posts, offering fresh insights and discussions on the latest trends and topics in our community.</p>
+</section>
  </main>
 
- <footer>
+ <!-- Footer -->
+    <footer class="footer footer-center p-10 bg-[#12132D] text-white  mt-20 font-inter">
+        <aside>
+            <h1 class="font-bold text-5xl">MiXel</h1>
+        <p>Engage in lively discussions, share insights, and connect with a diverse community in our forum. Dive into topics ranging from the latest trends to timeless classics, fostering a space for meaningful conversations.</p>
+       
+        <nav>
+          <div class="grid grid-flow-col gap-4">
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a>
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a>
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
+          </div>
+        </nav>
+    </aside>
+    <footer class="footer px-10 py-4 border-t border-base-300">
+        <p>2017, All Rights Reserved.</p>
+    </footer>
+      </footer>
 
- </footer>
-
+      <!-- JS Link -->
  <script src="scripts/retro.js"></script>
 </body>
 </html>
