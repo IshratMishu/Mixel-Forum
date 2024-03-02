@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,19 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- CSS link -->
     <link rel="stylesheet" href="styles/style.css">
+    <script>
+        tailwind.config = {
+        theme: {
+            extend: {
+            colors: {
+                clifford: '#da373d',
+               'color-gray60': '#12132D99',
+               'color-gray80' : '#12132DCC',
+            }
+            }
+        }
+        }
+    </script>
 </head>
 <body>
  <header>
@@ -24,7 +37,7 @@
  <footer>
 
  </footer>
- 
+
  <script src="scripts/retro.js"></script>
 </body>
 </html>
