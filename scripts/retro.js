@@ -1,10 +1,13 @@
 
-// Search & Let's Discuss Section Functionality
+//Let's Discuss Section Functionality
+
+let viewAll = 101;
 const discussionPosts = async(inputText) => {
+  viewAll = inputText;
     const response = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${inputText}`);
     const data = await response.json();
     const allData = data.posts;
-
+    
     const discussionPosts = document.getElementById('discussion-posts');
 
     //clear data before next search
@@ -65,25 +68,34 @@ const discussionPosts = async(inputText) => {
       discussionPosts.appendChild(div);
       
     });
-}
 
-discussionPosts();
+    toggleSpinner(false);
+}
 
 
 // Search Functionality
 const searchCategory = () => {
+  toggleSpinner(true);
   const inputField = document.getElementById('input-field');
   const inputText = inputField.value;
   inputField.value = '';
   discussionPosts(inputText);
 }
 
-searchCategory();
 
-
-
-
-
+// Loading Spinner Function
+const toggleSpinner = (isLoading) => {
+  const loadingSpinner = document.getElementById('toggle-spinner');
+    if(isLoading){
+      loadingSpinner.classList.remove('hidden');
+    }
+    else{
+      loadingSpinner.classList.add('hidden');
+    }
+  }
+ 
+  searchCategory();
+  discussionPosts(viewAll);
 
 
 
