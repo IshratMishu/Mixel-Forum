@@ -74,9 +74,11 @@ discussionPosts();
 const searchCategory = () => {
   const inputField = document.getElementById('input-field');
   const inputText = inputField.value;
+  inputField.value = '';
   discussionPosts(inputText);
 }
 
+searchCategory();
 
 
 
