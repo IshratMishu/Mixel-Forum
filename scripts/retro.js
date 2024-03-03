@@ -1,11 +1,15 @@
 
 // Search & Let's Discuss Section Functionality
-const discussionPosts = async() => {
-    const response = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
+const discussionPosts = async(inputText) => {
+    const response = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${inputText}`);
     const data = await response.json();
     const allData = data.posts;
 
     const discussionPosts = document.getElementById('discussion-posts');
+
+    //clear data before next search
+    discussionPosts.textContent = '';
+
     allData.forEach((item) => {
         const div = document.createElement('div');
         div.innerHTML = `<div class="card card-side bg-base-100 shadow-xl flex flex-col lg:flex-row">
@@ -58,16 +62,20 @@ const discussionPosts = async() => {
         </div>
       </div>`
       
-    console.log(item);
       discussionPosts.appendChild(div);
       
     });
-    
 }
 
 discussionPosts();
 
 
+// Search Functionality
+const searchCategory = () => {
+  const inputField = document.getElementById('input-field');
+  const inputText = inputField.value;
+  discussionPosts(inputText);
+}
 
 
 
