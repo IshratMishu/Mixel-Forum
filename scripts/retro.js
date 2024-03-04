@@ -17,7 +17,7 @@ const discussionPosts = async(inputText) => {
         const div = document.createElement('div');
         div.innerHTML = `<div class="card card-side bg-base-100 shadow-xl flex flex-col lg:flex-row">
         <div class="indicator mt-10 lg:ml-5 mx-auto">
-          <span id="active-test" class="indicator-item badge ${item.isActive ? 'badge-success' : 'badge-error'}"></span>
+          <span class="indicator-item badge ${item.isActive ? 'badge-success' : 'badge-error'}"></span>
           <div class="grid w-20 h-20 bg-base-300 place-items-center"><img src="${item.image}" alt=""></div>
         </div>
         <div class="card-body p-1 lg:p-10">
@@ -55,7 +55,7 @@ const discussionPosts = async(inputText) => {
             </div>
 
           <div>
-            <button class="btn btn-circle bg-success">
+            <button class="button-click btn btn-circle bg-success">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6 bg-success rounded-2xl p-0.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z" />
               </svg>
@@ -66,10 +66,51 @@ const discussionPosts = async(inputText) => {
       </div>`
       
       discussionPosts.appendChild(div);
-      
     });
 
-    toggleSpinner(false);
+    
+// eitaaaaaaaaaaaaaaaa
+let count = 0 ;
+  const buttonClick = document.getElementsByClassName('button-click');
+  const appendDetails = document.getElementById('append-details');
+
+function findData(title,viewCount){
+  const div = document.createElement('div');
+  div.classList = 'flex gap-10';
+
+const h2 = document.createElement('h2');
+h2.classList = 'text-sm text-black font-medium';
+h2.innerText = title ;
+
+const p = document.createElement('p');
+p.className = 'text-sm text-color-gray60';
+p.innerText = viewCount ;
+
+        div.appendChild(h2);
+        div.appendChild(p);
+        appendDetails.appendChild(div);
+}
+
+const buttonId = allData;
+      for (let i = 0; i < buttonClick.length; i++) {
+        const button = buttonClick[i];
+        const data = buttonId[i];
+
+    button.addEventListener('click', function(){
+      if(!button.classList.contains("selectedpost")){
+        count = count + 1;
+        document.getElementById('change-number').innerText = count;
+      }
+ 
+console.log(data);
+      if (data) {
+        findData(data.title, data.view_count);
+      }    
+})
+  }
+
+ toggleSpinner(false);
+
 }
 
 
@@ -86,19 +127,23 @@ const searchCategory = () => {
 // Loading Spinner Function
 const toggleSpinner = (isLoading) => {
   const loadingSpinner = document.getElementById('toggle-spinner');
-    if(isLoading){
-      loadingSpinner.classList.remove('hidden');
-    }
-    else{
+  if (isLoading) {
+    loadingSpinner.classList.remove('hidden');
+  } 
+  else{
+    setTimeout(() => {
       loadingSpinner.classList.add('hidden');
-    }
-  }
+    }, 2000);
+   }
+}
+
  
   searchCategory();
   discussionPosts(viewAll);
 
 
 
+ 
 
 
 

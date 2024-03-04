@@ -96,15 +96,7 @@
             <!-- Dynamic JS Applied in Search Bar -->
             <label class="input input-bordered flex items-center gap-2 rounded-3xl">
                 <input id="input-field" type="text" class="grow" placeholder="Search here anything"/>
-                <button onclick="searchCategory()" class="btn btn-sm bg-[#797DFC] rounded-3xl text-white">Search</button>
-
-                <!-- Loading Spinner -->
-    <div id="toggle-spinner" class="animate-pulse hidden">  
-      <span class="loading loading-dots loading-xs text-success"></span>
-      <span class="loading loading-dots loading-sm text-success"></span>
-      <span class="loading loading-dots loading-md text-success"></span>
-      <span class="loading loading-dots loading-lg text-success"></span>
-        </div>
+                <button onclick="searchCategory()" class="btn btn-sm bg-[#797DFC] rounded-3xl text-white">Search</button>     
               </label>
 
               
@@ -139,6 +131,13 @@
     <h1 class="text-black text-4xl font-bold text-center">Let's Discuss</h1>
     <p class="text-color-gray60 text-xl font-medium text-center mt-2">Join the conversation in our forum section for diverse discussions. Share insights, connect with the community, and stay informed on a variety of topics. Your gateway to engaging conversations awaits!</p>
 
+    <!-- Loading Spinner -->
+    <div id="toggle-spinner" class="text-center hidden">  
+      <span class="loading loading-spinner loading-xs text-success"></span>
+      <span class="loading loading-spinner loading-sm text-success"></span>
+      <span class="loading loading-spinner loading-md text-success"></span>
+      <span class="loading loading-spinner loading-lg text-success"></span>
+        </div>
 
     <!-- API Applied -->
     <div class="mt-10 flex flex-col-reverse lg:flex-row gap-10">
@@ -146,16 +145,20 @@
         </div>
 
         <!-- appendChild -->
-        <div class="card lg:h-48 lg:w-2/5 bg-base-100 shadow-xl">
+        <div class="card lg:w-2/5 bg-base-100 shadow-xl">
           <div class="card-body">
             <div class="flex justify-between">
               <h5 class="font-bold text-xl text-black">Title</h5>
               <div class="flex">
                 <img src="images/Frame.png" alt="">
-                <p class="text-color-gray60">Mark as read (<span>0</span>)</p>
+                <p class="text-color-gray60">Mark as read (<span id="change-number">0</span>)</p>
               </div>
             </div>
             
+            <div id="append-details" >
+
+            </div>
+
           </div>
         </div>
     </div>
